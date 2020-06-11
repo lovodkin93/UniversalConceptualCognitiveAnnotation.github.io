@@ -67,6 +67,10 @@ It can be installed by: [![PyPI version](https://badge.fury.io/py/TUPA.svg)](htt
 
     pip install tupa
 
+## Evaluation
+
+The evaluation process compares the gold-standard annotation of a specific passage, with the calculated annotation of that same passage, which is calculated by our model. Both passages are of Passage object type, which is an object that contains the connected graph that represents the annotation of the passage. Our evaluation includes the recall, precision and F1 scores. The calculation of these scores is done by comparing each edge's labels and yield, which is the literals that are under the edge's child node (if we look at the annotation as a tree). We can also do an unlabled evaluation, and then for each edge we'll compare only its yield. As part of the evaluation process, one can also choose to evaluate and receive the recall, precision and F1 scores of edges of specific labels. It's also possible to do a normalization (either seperately to the gold-standard annotation or the calculated one or jointly), so that there wouldn't be punishment for ambiguous cases, where one can annotate in two different ways.
+
 ## Source Code
 
 Python toolkit for reading and manipulating UCCA structures.
