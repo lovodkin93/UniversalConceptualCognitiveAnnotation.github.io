@@ -71,8 +71,8 @@ It can be installed by: [![PyPI version](https://badge.fury.io/py/TUPA.svg)](htt
 
 The evaluation process compares any two annotations of the same passage, for example the gold-standard annotation of a specific passage, with the annotation of that same passage predicted by a parser. Both passages are of Passage object type, which is an object that contains the connected graph that represents the annotation of the passage. For a more detailed explanation of what the Passage object consists of, please see https://ucca.readthedocs.io/en/latest/api/ucca.core.Passage.html#ucca.core.Passage . Our evaluation includes the recall, precision and F1 scores. The calculation of these scores is done by comparing each edge's labels and yield, which are the terminals that are under the edge's child node (if we look at the annotation as a tree, where we traverse primary edges but not remote edges). We can also do an unlabeled evaluation, and then for each edge we will compare only its yield. As part of the evaluation process, one can also choose to evaluate and receive the recall, precision and F1 scores of edges of specific labels. By default, the evaluation incorporates a normalization (either seperately of the gold-standard annotation and the predicted one or jointly), which helps to assimilate structures that have the same meaning despite possible formal differences (for example "The boy took a bath" and "The boy showered"). The normalization can be turned off if necessary, by passing the equivalent argument.
 The command which evokes the evaluation is:
-python -m scripts.evaluate_standard with the relevant arguments. For a more detailed explanation of the relevant arguments, please see https://github.com/lovodkin93/ucca/blob/master/ucca/evaluation.md .
-For more details, please see https://github.com/lovodkin93/ucca/blob/master/ucca/evaluation.md .
+python -m scripts.evaluate_standard with the relevant arguments. 
+For a more detailed explanation of the relevant arguments and for more information, please see https://github.com/lovodkin93/ucca/blob/master/ucca/evaluation.md .
 
 
 ## Source Code
